@@ -276,7 +276,7 @@ def scoreboard():
        show_team_logo(home_team, home_logo_frame)
        show_team_logo(away_team, away_logo_frame)
    place_logos_on_scoreboard()
-  
+
    #Home and Away Score Labels
    guest_text = main_frame.create_text(145, 200, text="GUEST", fill=f"{color1}", font=("Helvetica", 38, "bold", "italic"))
    home_text = main_frame.create_text(150, 260, text="HOME", fill=f"{color2}", font=("Helvetica", 38, "bold", "italic"))
@@ -366,7 +366,7 @@ def scoreboard():
            elif current_inning[0] > 8: 
                if team_turn[0] == "guest" and guest_total > home_total:
                    window2.after(2000, (window2.destroy(), end_of_game()))
-               elif team_turn[0] == "home" and home_total > guest_total and out_count[0] == 3:
+               elif team_turn[0] == "home" and home_total > guest_total:
                    window2.after(2000, (window2.destroy(), end_of_game()))
 
    def switch_colors():  
@@ -397,7 +397,7 @@ def scoreboard():
            elif current_inning[0] > 8: 
                if team_turn[0] == "guest" and guest_total > home_total:
                    window2.after(2000, (window2.destroy(), end_of_game()))
-               elif team_turn[0] == "home" and home_total > guest_total and out_count[0] == 3:
+               elif team_turn[0] == "home" and home_total > guest_total:
                    window2.after(2000, (window2.destroy(), end_of_game()))
  
    #Function to update count
@@ -426,7 +426,7 @@ def scoreboard():
            elif current_inning[0] > 8: 
                if team_turn[0] == "guest" and guest_total > home_total:
                    window2.after(2000, (window2.destroy(), end_of_game()))
-               elif team_turn[0] == "home" and home_total > guest_total and out_count[0] == 3:
+               elif team_turn[0] == "home" and home_total > guest_total:
                    window2.after(2000, (window2.destroy(), end_of_game()))
        reset_ball_strike()
        update_total()
