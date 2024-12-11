@@ -116,7 +116,8 @@ color1 = "white"
 color2 = "black"
 guest_total = 0
 home_total = 0
-#Dictionary for team images
+
+#Dictionary of team images
 team_images = {
    "angels": "./Images/Angels.png",
    "astros": "./Images/Astros.png",
@@ -360,9 +361,7 @@ def scoreboard():
        main_frame.itemconfig(guest_text, fill=color1)
        main_frame.itemconfig(home_text, fill=color2)
        if current_inning[0] >= 8:
-           if current_inning[0] == 9 and team_turn[0] == "guest" and guest_total > home_total:
-               window2.after(2000, (window2.destroy(), end_of_game()))
-           elif current_inning[0] == 8 and team_turn[0] == "home" and home_total > guest_total:
+           if current_inning[0] == 8 and team_turn[0] == "home" and home_total > guest_total:
                window2.after(2000, (window2.destroy(), end_of_game()))
            elif current_inning[0] > 8: 
                if team_turn[0] == "guest" and guest_total > home_total:
@@ -393,9 +392,7 @@ def scoreboard():
        guest_total_label.config(text=str(guest_total))
        home_total_label.config(text=str(home_total))
        if current_inning[0] >= 8:
-           if current_inning[0] == 9 and team_turn[0] == "guest" and guest_total > home_total:
-               window2.after(2000, (window2.destroy(), end_of_game()))
-           elif current_inning[0] == 8 and team_turn[0] == "home" and home_total > guest_total:
+           if current_inning[0] == 8 and team_turn[0] == "home" and home_total > guest_total:
                window2.after(2000, (window2.destroy(), end_of_game()))
            elif current_inning[0] > 8: 
                if team_turn[0] == "guest" and guest_total > home_total:
@@ -424,9 +421,7 @@ def scoreboard():
                current_score = int(guest_scores[inning].cget("text"))
                guest_scores[inning].config(text=str(current_score + 1))
        if current_inning[0] >= 8:
-           if current_inning[0] == 9 and team_turn[0] == "guest" and guest_total > home_total:
-               window2.after(2000, (window2.destroy(), end_of_game()))
-           elif current_inning[0] == 8 and team_turn[0] == "home" and home_total > guest_total:
+           if current_inning[0] == 8 and team_turn[0] == "home" and home_total > guest_total:
                window2.after(2000, (window2.destroy(), end_of_game()))
            elif current_inning[0] > 8: 
                if team_turn[0] == "guest" and guest_total > home_total:
